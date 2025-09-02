@@ -95,7 +95,7 @@ public class Lecture1 {
 
 
 //        check if the number is prime
-
+/*
         int n = 15;
         boolean isPri = true;
         if(n <= 1) {
@@ -114,6 +114,8 @@ public class Lecture1 {
         } else {
             System.out.print(n+" is not a prime number.");
         }
+
+ */
 
 
 
@@ -155,6 +157,102 @@ Note : You don't need to submit the problem. Just attempt in your notebook and a
          */
 
 
+//        N factorial
+        /*
+        int n =  5;
+        int fact = 1;
+        for(int i=1; i<=n; i++) {
+            fact *= i;
+        }
+        System.out.print(fact);
+
+         */
+
+
+
+//        GCD
+
+/*
+        int num1 = 48;
+        int num2 = 18;
+
+        int small = 0;
+        small = (num2 > num1)? num1 : num2;
+//        small = Math.min(num1, num2);
+
+        int gcd = 1;
+        for(int i=1; i<=small; i++) {
+            if(num2%i == 0 && num1%i ==0) {
+                gcd = i;
+            }
+        }
+        System.out.println(gcd);
+
+ */
+
+
+
+
+//        Using Euclidean Algorithm (Iterative) for GCD
+
+        /*
+        int ans = Lecture1.EuclideanAlgo(4, 12);
+        System.out.println(ans);
+        int ansRecursive = recursiveGCDEuclidean(4, 12);
+        System.out.println(ansRecursive);
+
+         */
+
+
+
+//       Operator Precedence and Associativity in java.
+        int q1 = 2 + 3 * 4; // ans = 14
+        System.out.print(q1);
+
+        int q2 = (2 + 3) * 4;
+        System.out.println(q2);
+
+        int q3 = 10 - 5 + 3;
+        System.out.println(q3);
+
+        int q4 = 10 / 5 * 2;
+        System.out.println(q4);
+
+        int q5 = 10 + 5 % 3;
+        System.out.println(q5);
+
+        int q6 = 2 * 3 + 4 * 5;
+        System.out.println(q6);
+
+        boolean q7 = 5 > 3 && 4 < 2;
+        System.out.println(q7);
+
+        int q8 = 8 >> 1 + 1;
+        System.out.println(q8);
+
+        int q9 = (8 >> 1) + 1;
+        System.out.println(q9);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -169,4 +267,20 @@ Note : You don't need to submit the problem. Just attempt in your notebook and a
 
 
     }
+
+    public static int EuclideanAlgo(int a, int b) {
+        while(a != 0) {
+            int temp = a;
+            a = a % b;
+            b = temp;
+        }
+        return b;
+    }
+
+    public static int recursiveGCDEuclidean(int a, int b) {
+        if(b == 0) return a;
+        return recursiveGCDEuclidean(b, a%b);
+    }
 }
+
+
