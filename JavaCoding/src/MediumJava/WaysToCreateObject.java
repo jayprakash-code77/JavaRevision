@@ -17,28 +17,74 @@ class RoomListing {
 
 
 
-class Stud {
-    public Stud() {
-
+class UsingCloneMethod implements Cloneable{
+    String name = "Jai Bhavani";
+    public UsingCloneMethod() {
 ;   }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
+
 public class WaysToCreateObject {
     public static void main(String args[]) {
+
         ////    1. Using "new" keyword
 //    RoomListing room = new RoomListing(1, "Jayprakash");
 
 
 
 
-//    2. Using Reflection
-        try {
-            Class<?> c = Class.forName("MediumJava.RoomListing");
-            RoomListing s = (RoomListing) c.getDeclaredConstructor(int.class, String.class).newInstance(1, "Jayprakash");
+////    2. Using Reflection
+//        try {
+//            Class<?> c = Class.forName("MediumJava.RoomListing");
+//            RoomListing s = (RoomListing) c.getDeclaredConstructor(int.class, String.class).newInstance(1, "Jayprakash");
+//
+//
+//            System.out.println(s.ownerName);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 
-            System.out.println(s.ownerName);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+
+
+
+
+
+
+
+//// using the clone() method
+//
+//        UsingCloneMethod useClone = new UsingCloneMethod();
+//        try {
+//            UsingCloneMethod useCline2 = (UsingCloneMethod) useClone.clone();
+//            System.out.println(useCline2.name);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            System.out.println("CloneNotSupportedException");
+//        }
+
+
+
+
+
+
+
+
+
+
+
+//        Using Deserialization
+        
+
+
+
+
+
+
     }
 }
