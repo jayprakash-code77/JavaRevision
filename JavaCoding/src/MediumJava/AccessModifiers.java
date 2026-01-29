@@ -15,9 +15,45 @@ class Demo extends TechLab {
     }
 }
 
+
+
+//Overloading private methods
+class OverLoadPrivate {
+    String name = "Jayprakash ";
+    int age = 23;
+
+//    Private method
+    private String formate() {
+        return name +  "Maurya";
+    }
+
+    private String formate(int age) {
+        return name+" Maurya " + Integer.toString(age);
+    }
+
+
+    String callFormate() {
+        return formate();
+    }
+
+    String callFormate(int age) {
+        return formate(age);
+    }
+}
+
 public class AccessModifiers {
     public String name = "7X";
     String email = "sevenX@gmail.com";
     private String password = "jayPrakash";
     protected String ownerName = "Jaypraksh";
+
+
+    public static void main(String[] args) {
+
+        System.out.println("-------------------- Overloading private methods class ----------------------");
+        OverLoadPrivate olp = new OverLoadPrivate();
+        System.out.println(olp.callFormate());
+        System.out.println(olp.callFormate(23));
+
+    }
 }
