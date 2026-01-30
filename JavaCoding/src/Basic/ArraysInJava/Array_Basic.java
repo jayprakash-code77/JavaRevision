@@ -1,6 +1,7 @@
 package Basic.ArraysInJava;
 
 public class Array_Basic {
+
     public static void main(String[] args) {
 
 //        Array example
@@ -52,7 +53,99 @@ public class Array_Basic {
 
 
 
-//
+//  Transverse on an Array
+        /*
+        String [] strArr = new String[]{"Jay", "Maurya", "Shyamdev"};
+        for(String element: strArr) {
+            System.out.println(element);
+        }
+         */
+
+
+
+
+
+
+
+
+//        Sort an array
+        /*
+        int[] arr = new int[]{2,3,4,7,8,11,90};
+        for(int i=0; i<arr.length; i++) {
+            for(int j=i; j<arr.length; j++) {
+                if(arr[j] < arr[i]) {
+                    int tem = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tem;
+                }
+            }
+        }
+        for(int element : arr) {
+            System.out.print(element+" ");
+        }
+         */
+
+
+
+
+
+
+
+
+
+//        add two number without using +(plus) or -(minus) sign.
+        /*
+        int num1 = 3;
+        int num2 = 4;
+        int sum = num2;
+        for(int i=1; i<=num1; i++) {
+            sum = sum + 1;
+        }
+        System.out.println(sum);
+
+         */
+
+
+
+
+
+
+
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
