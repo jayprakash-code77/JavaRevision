@@ -70,7 +70,7 @@ public class String_MatcherClass {
 ///         this will reset the last position and set it back to 0(from start).
 
 //            _________________________IMPORTANT________________________
-            match.reset(); // in this example, this line will create the infinite loop
+//            match.reset(); // in this example, this line will create the infinite loop
         }
 
 
