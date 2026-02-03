@@ -1,4 +1,5 @@
 package MediumJava;
+
 import MediumJava.Nursery;
 
 class TechLab {
@@ -54,6 +55,11 @@ public class AccessModifiers {
         OverLoadPrivate olp = new OverLoadPrivate();
         System.out.println(olp.callFormate());
         System.out.println(olp.callFormate(23));
+
+        Nursery n = new Flower();
+        n.name = "Lilly";
+
+        System.out.println(n.name);
 
     }
 }
