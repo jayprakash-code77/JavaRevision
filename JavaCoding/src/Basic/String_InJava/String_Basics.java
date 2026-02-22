@@ -61,7 +61,7 @@ public class String_Basics {
 
 
 
-
+/*
 //  Creating the String using the ascii values
         byte[] ascii = {83, 65, 66};
         String str = new String(ascii);
@@ -72,6 +72,12 @@ public class String_Basics {
         char[] ch = {'J', 'A', 'Y'};
         String naam = new String(ch);
         System.out.println(naam);
+*/
+
+
+
+
+
 
 
 
