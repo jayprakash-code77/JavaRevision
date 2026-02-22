@@ -6,5 +6,8 @@ public class EntryPoint {
         int[] arr = {2, 3, 1, 2, 3};
         String res = a.findDuplicates(arr).toString();
         System.out.println(res);
+
+        int[] arr1 = {12,345,2,6,7896};
+        System.out.println(a.findNumbers(arr1));
     }
 }

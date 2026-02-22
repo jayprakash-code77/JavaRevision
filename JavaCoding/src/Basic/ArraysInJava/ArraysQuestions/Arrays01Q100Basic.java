@@ -61,6 +61,38 @@ public class Arrays01Q100Basic {
 //      return the final result array
         return result;
     }
+
+
+    /**
+     * Given an array nums of integers, return how many of them contain an even number of digits.
+     *
+     * <p>This method uses <b></><i>String.valueOf()</i></b>.</p>
+     * <ul>
+     *     <li>Convert int into String.</li>
+     *     <li>Find the length of the string of num.</li>
+     *     <li>If length is even: <b>result++</b></li>
+     * </ul
+     * <p>Time Complexity: O(n)</p>
+     * <p>Space Complexity: O(1) (excluding result )</p>
+     *
+     *
+     * @param arr input integer array.
+     * @return num of even numbers.
+     * @throws IllegalArgumentException if array is null
+     *
+     */
+
+    public int findNumbers(int[] nums) {
+        int result = 0;
+        for(int i=0; i<nums.length; i++) {
+            String str = String.valueOf(nums[i]);
+            int numOfNum = str.length();
+            if(numOfNum % 2 == 0) {
+                result++;
+            }
+        }
+        return result;
+    }
 }
 
 
