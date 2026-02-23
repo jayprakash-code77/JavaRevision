@@ -2,6 +2,8 @@ package Basic.ArraysInJava.ArraysQuestions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 /**
  * Provides solutions for basic array-related problems.
@@ -16,7 +18,7 @@ import java.util.List;
 public class Arrays01Q100Basic {
 
     /**
-     * Finds duplicate elements in an integer array.
+     * Finds duplicate elements in an integer array(In-place index marking).
      *
      * <p>This method uses an in-place index marking technique.
      * It assumes that:
@@ -37,7 +39,8 @@ public class Arrays01Q100Basic {
      * @return list of duplicate elements
      * @throws IllegalArgumentException if array is null
      */
-    public List<Integer> findDuplicates(int[] arr) {
+    public List<Integer> findDuplicates_MVIAN(int[] arr) {
+//  MVIAN: Marking Visited Index As Negative
 //  throw Exception if "arr" is "null"
         if (arr == null) {
             throw new IllegalArgumentException("Input array cannot be null");
@@ -61,6 +64,44 @@ public class Arrays01Q100Basic {
 //      return the final result array
         return result;
     }
+
+
+    /**
+     * Find the duplicate element in array(Using HashSet data structure).
+     *
+     * This method uses the HashSet property of storing unique values.
+     *
+     * This algorithm works by making use HashSet. It simply adds values to the HashSet and checks if value is present in the Set. If the value is present, it is a Duplicate value.
+     *
+     * <p>Time Complexity: O(n)</p>
+     * <p>Space Complexity: O(1) (excluding result list)</p>
+     *
+     * @param arr input integer array.
+     * @return ArrayList with values which are duplicate in the <b>arr</b> input.
+     * @throws IllegalArgumentException if array is null.
+     */
+    public List<Integer> findDuplicates_HashSet(int[] arr) {
+        // Checking for null value as input.
+        if(arr == null) {
+            throw new IllegalArgumentException("Input array cannot be null");
+        }
+//      Set for storing the unique values
+        Set<Integer> uniqueValue = new HashSet<>();
+//      List for storing the duplicate values present in the input array.
+        List<Integer> duplicateNum = new ArrayList<>();
+        for(int element: arr) {
+            // Add element to HashSet to check if the element is unique or not.
+            if(uniqueValue.contains(element)) {
+//              // Adding elements to ArrayList which are already present in the HashSet which means, it is duplicate.
+                duplicateNum.add(element);
+            }else{
+                uniqueValue.add(element);
+            }
+        }
+//      returning the ArrayList Containing the elements which were found duplicate in the input array.
+        return duplicateNum;
+    }
+
 
 
     /**
