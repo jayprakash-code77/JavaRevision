@@ -123,10 +123,10 @@ public class Arrays01Q100Basic {
      *
      */
 
-    public int findNumbers(int[] nums) {
+    public int findNumbers(int[] arr) {
         int result = 0;
-        for(int i=0; i<nums.length; i++) {
-            String str = String.valueOf(nums[i]);
+        for(int i=0; i<arr.length; i++) {
+            String str = String.valueOf(arr[i]);
             int numOfNum = str.length();
             if(numOfNum % 2 == 0) {
                 result++;
@@ -134,6 +134,83 @@ public class Arrays01Q100Basic {
         }
         return result;
     }
+
+
+
+
+    public int sumOfGoodNumbers(int[] nums, int k) {
+        int n = nums.length;
+        int totalSum = 0;
+
+        for (int i = 0; i < n; i++) {
+            boolean isGood = true;
+
+            // Check element at index i - k (if it exists)
+            if (i - k >= 0) {
+                if (nums[i] <= nums[i - k]) {
+                    isGood = false;
+                }
+            }
+
+            // Check element at index i + k (if it exists)
+            if (isGood && i + k < n) {
+                if (nums[i] <= nums[i + k]) {
+                    isGood = false;
+                }
+            }
+
+            // If it passed both checks, it's a "good" number
+            if (isGood) {
+                totalSum += nums[i];
+            }
+        }
+
+        return totalSum;
+    }
+
+
+    /**
+     * Find pair with given sum in a Sorted array.
+     *
+     * <p>Given an array <b>arr</b> of size <b>n</b>.</p>
+     * <p>We need to find all pairs in the array that sum up to a number equal to <b>K</b>.</p>
+     * <p>If no such pair exists, <b>return -1</b></p>
+     *
+     * <p>Time Complexity: O(n)</p>
+     * <p>Space Complexity: O(1) (excluding result list)</p>
+     *
+     * @param arr input integer array, sorted in increasing order and an integer <b>K</b>.
+     * @return array of pairs that sum up to <b>K</b>. If no pair found, return [[]];
+     * @throws IllegalArgumentException if the array is null.
+     *
+     */
+
+    public ArrayList<int[]> pairSumOfArray(int arr[], int K) {
+        if(arr == null) {
+            throw new IllegalArgumentException("Input array cannot be null.");
+        }
+
+        int lowIndex = 0;
+        int highIndex = arr.length - 1;
+        ArrayList<int[]> result = new ArrayList<>();
+
+        int idxOfPairSums = 0;
+
+        while (lowIndex < highIndex) {
+            if(arr[lowIndex] + arr[highIndex] == K) {
+                int pairArr[] = {arr[lowIndex], arr[highIndex]};
+                result.add(pairArr);
+                idxOfPairSums++;
+            }
+            if(arr[lowIndex] + arr[highIndex] < K) {
+                lowIndex++;
+            }else{
+                highIndex--;
+            }
+        }
+        return result;
+    }
+
 }
 
 
