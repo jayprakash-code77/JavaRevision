@@ -31,5 +31,19 @@ public class EntryPoint {
             System.out.println("Pair: "+element[0]+", "+element[1]);
         }
 
+
+
+//      Find common element in three sorted arrays.
+        int[] sortedArr1 = {1,2,3,4,5};
+        int[] sortedArr2 = {1,2,3,4,5,6,7};
+        int[] sortedArr3 = {1,2,3,4,5,6,7,8,9,10};
+
+        ArrayList<Integer> commonElements = a.commonElementInThreeSortedArray(sortedArr1, sortedArr2, sortedArr3);
+        System.out.print("Common element in all three elements: ");
+        for(int element: commonElements) {
+            System.out.print(element+" ");
+        }
+        System.out.println();
+
     }
 }

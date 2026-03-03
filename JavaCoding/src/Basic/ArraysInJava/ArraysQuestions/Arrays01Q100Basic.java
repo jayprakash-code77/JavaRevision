@@ -180,7 +180,7 @@ public class Arrays01Q100Basic {
      * <p>Space Complexity: O(1) (excluding result list)</p>
      *
      * @param arr input integer array, sorted in increasing order and an integer <b>K</b>.
-     * @return array of pairs that sum up to <b>K</b>. If no pair found, return [[]];
+     * @return List of pairs that sum up to <b>K</b>. If no pair found, returns an empty ArrayList;
      * @throws IllegalArgumentException if the array is null.
      *
      */
@@ -206,6 +206,45 @@ public class Arrays01Q100Basic {
                 lowIndex++;
             }else{
                 highIndex--;
+            }
+        }
+        return result;
+    }
+
+
+    /**
+     * Find common element in three sorted array.
+     *
+     * <p>Given three sorted array, we need to find find the element which are common in all three arrays.</p>
+     * <p>If no such element exits, return empty list.</p>
+     *
+     * <p>Time Complexity: O(n)</p>
+     * <p>Space Complexity: O(1) (excluding result list)</p>
+     *
+     * @param arr1
+     * @param arr2
+     * @param arr3
+     * @return List of element which are common in all three given arrays.
+     * @throws IllegalArgumentException if any array is <b>null</b>.
+     */
+
+    public ArrayList<Integer> commonElementInThreeSortedArray(int[] arr1, int[] arr2, int[] arr3) {
+        ArrayList<Integer> result = new ArrayList<>();
+        int arr1Pointer = 0, arr2Pointer = 0, arr3Pointer = 0;
+        while(arr1Pointer < arr1.length && arr2Pointer < arr2.length && arr3Pointer < arr3.length) {
+            if(arr1[arr1Pointer] == arr2[arr2Pointer] && arr1[arr1Pointer] == arr3[arr3Pointer]) {
+                result.add(arr1[arr1Pointer]);
+                arr1Pointer++;
+                arr2Pointer++;
+                arr3Pointer++;
+            }else if(arr1[arr1Pointer] < arr2[arr2Pointer]) {
+                arr1Pointer++;
+            }else if(arr1[arr1Pointer] > arr2[arr2Pointer]) {
+                arr2Pointer++;
+            }else if(arr2[arr2Pointer] < arr3[arr3Pointer]) {
+                arr2Pointer++;
+            }else {
+                arr3Pointer++;
             }
         }
         return result;
