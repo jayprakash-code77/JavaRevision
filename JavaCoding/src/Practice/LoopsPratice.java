@@ -252,6 +252,7 @@ public class LoopsPratice {
          */
 
         // Prime number using the Mathematical Way
+        /*
         int num = 23;
         boolean isPrime = true;
         for(int i=2; i*i <= num; i++) {
@@ -266,6 +267,7 @@ public class LoopsPratice {
             System.out.println("Not Prime");
         }
 
+         */
 
 
 
@@ -278,8 +280,54 @@ public class LoopsPratice {
 
 
 
+        // table printing
+        /*
+        int num = 5;
+        for(int i=1; i<=10; i++) {
+            System.out.println(num+" x "+i+" = "+i*num);
+        }
+
+         */
 
 
+
+
+
+
+
+
+        // print half pyramid
+        /*
+        int num = 5;
+        for(int i=0; i<num; i++) {
+            for(int j=0; j<=i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+         */
+
+
+
+
+
+
+
+
+
+
+        // print half inverted pyramid
+        /*
+        int num = 5;
+        for(int i=0; i<num; i++){
+            for(int j=1; j<=num-i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+         */
 
 
 
