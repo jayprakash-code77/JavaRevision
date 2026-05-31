@@ -330,6 +330,225 @@ public class ArrayTraversal {
 
 
 
+//        Brute force: Left Rotate by k
+        /*
+        int[] arr = {1,2,3,4,5};
+        int k = 3;
+        for(int i=0; i<k; i++) {
+            int losingValue = arr[0];
+            for(int j=0; j<arr.length-1; j++) {
+                arr[j] = arr[j+1];
+            }
+            arr[arr.length-1] = losingValue;
+        }
+        System.out.println(Arrays.toString(arr));
 
+         */
+
+
+
+
+
+
+
+
+
+
+        // IMPORTANT: Optimal Approach : REVERSAL ALGORITHM: Rotate Right by K.
+        /*
+        int[] arr = {1,2,3,4,5};
+        int k = 3;
+        k = k%arr.length; // this for the k greater than length of array.
+        reverse(arr, 0, arr.length-1);
+        reverse(arr, 0,k-1);
+        reverse(arr, k, arr.length-1);
+        System.out.println(Arrays.toString(arr));
+
+         */
+
+
+        // IMPORTANT: Optimal Approach : REVERSAL ALGORITHM: Rotate Left by K.
+        /*
+        int[] arr = {1,2,3,4,5};
+        int k = 2;
+        k = k%arr.length;
+        reverse(arr, 0, k-1);
+        reverse(arr, k, arr.length-1);
+        reverse(arr, 0, arr.length-1);
+        System.out.println(Arrays.toString(arr));
+
+         */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // move negative without order
+        /*
+        int[] num = {-1,2,-3,4,-5};
+        int p1 = 0;
+        int p2 = num.length-1;
+        while (p1 < p2) {
+            if(num[p2] < 0) {
+                p2--;
+                continue;
+            }else if(num[p1] < 0) {
+                int temp = num[p1];
+                num[p1] = num[p2];
+                num[p2] = temp;
+                p1++;
+                p2--;
+            }
+        }
+        System.out.println(Arrays.toString(num));
+
+         */
+
+
+
+
+
+
+        // Move Negatives : In Order
+        /*
+        int[] num = {-1,2,-3,4,-5};
+        int negativePos = 0;
+        for (int i=0; i<num.length; i++) {
+            if(num[i] < 0) {
+                int temp = num[i];
+                num[i] = num[negativePos];
+                num[negativePos] = temp;
+                negativePos++;
+            }
+        }
+        System.out.println(Arrays.toString(num));
+
+         */
+
+
+
+
+
+
+
+
+
+
+
+
+        // IMPORTANT: Partitioning -> PARTITION EVEN / ODD
+        /*
+        int[] arr = {1,2,3,4,5,6};
+        int part = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] % 2 == 0) {
+                int temp = arr[i];
+                arr[i] = arr[part];
+                arr[part] = temp;
+
+                part++;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+
+         */
+
+
+
+
+
+
+
+
+        // Move Zeros
+        /*
+        int[] num = {0,1,0,3,12};
+        int pos = 0;
+        for(int i=0; i<num.length; i++) {
+            if(num[i] != 0) {
+                int temp = num[i];
+                num[i] = num[pos];
+                num[pos] = temp;
+                pos++;
+            }
+        }
+        System.out.println(Arrays.toString(num));
+
+         */
+
+
+
+
+
+
+
+
+
+
+        // Sort Color
+        int[] arr = {2, 0, 2, 1, 1, 0};
+        int low = 0;
+        int mid = 0;
+        int high = arr.length-1;
+        while(mid <= high) {
+            if(arr[mid] == 0) {
+                // swap low and mid
+                int temp = arr[low];
+                arr[low] = arr[mid];
+                arr[mid] = temp;
+                low++;
+                mid++;
+            }else if(arr[mid] == 1) {
+                mid++;
+            }else{ // arr[mid] == 2
+                int temp = arr[mid];
+                arr[mid] = arr[high];
+                arr[high] = temp;
+
+                high--;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    // reverse method
+    static void reverse(int[] arr, int start, int end) {
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+
+            start++;
+            end--;
+        }
     }
 }
