@@ -496,10 +496,13 @@ public class ArrayTraversal {
 
 
         // Sort Color
+
+        /*
         int[] arr = {2, 0, 2, 1, 1, 0};
         int low = 0;
         int mid = 0;
         int high = arr.length-1;
+        System.out.println(Arrays.toString(arr));
         while(mid <= high) {
             if(arr[mid] == 0) {
                 // swap low and mid
@@ -517,8 +520,87 @@ public class ArrayTraversal {
 
                 high--;
             }
+            System.out.println(Arrays.toString(arr));
         }
         System.out.println(Arrays.toString(arr));
+
+         */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Sort Color
+        /*
+        int[] arr = {2, 0, 2, 1, 1, 0};
+        int low = 0;
+        int mid = 0;
+        int high = arr.length-1;
+        while(mid <= high) {
+            if(arr[mid] == 0) {
+                int temp = arr[mid];
+                arr[mid] = arr[low];
+                arr[low] = temp;
+                low++;
+                mid++;
+            }else if(arr[mid] == 1) {
+                mid++;
+            }else{ // arr[mid] == 2
+                int temp = arr[mid];
+                arr[mid] = arr[high];
+                arr[high] = temp;
+
+                high--;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+
+         */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Rearrange Positives/Negatives:
+
+        /*
+        int[] arr = {1,-2,3,-4,5,-6};
+        int pos = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] < 0) {
+                int temp = arr[i];
+                arr[i] = arr[pos];
+                arr[pos] = temp;
+
+                pos++;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+
+         */
+
+
+
+
 
 
 
