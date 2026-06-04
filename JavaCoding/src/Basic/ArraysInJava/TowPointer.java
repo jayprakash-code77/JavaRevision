@@ -275,7 +275,40 @@ public class TowPointer {
 
 
 
-        //
+        // 3Sum : Problem
+        /*
+        int[] arr = {1,4,4,5,6,10,8};
+        int t = 16;
+
+        int idx1 = -1;
+        int idx2 = -1;
+        int idx3 = -1;
+        for(int i=0; i<arr.length-3; i++) {
+            int left = 0;
+            int right = arr.length-1;
+
+            if(right == i || left == i) {
+                continue;
+            }
+
+            while(left < right) {
+                if(arr[left] + arr[right] + arr[i] == t) {
+                    idx3 =i;
+                    idx2 = right;
+                    idx1 = left;
+                    break;
+                }else if(arr[left] + arr[right] + arr[i] > t) {
+                    right--;
+                }else{
+                    left++;
+                }
+            }
+
+        }
+        System.out.println("arr["+idx1+"] + arr["+idx2+"] + arr["+idx3+"] = "+t);
+
+         */
+
 
 
 
