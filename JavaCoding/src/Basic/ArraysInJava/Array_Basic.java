@@ -17,7 +17,7 @@ public class Array_Basic {
 
 
 
-//        Partila array intialization
+//        Partial array intialization
         /*
         int[] a;
         a = new int[]{2,3};
