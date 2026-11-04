@@ -273,6 +273,44 @@ public class Practice {
 
 
 
+        //
+        /*
+        int[][] matrix = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+        for(int i=0; i<matrix[0].length; i++) {
+            int sumCol = 0;
+            for(int j=0; j<matrix.length; j++) {
+                sumCol = sumCol + matrix[j][i];
+            }
+            System.out.println("Col "+i+" "+sumCol);
+        }
+
+         */
+
+
+
+
+
+
+
+
+
+
+
+        // "toString()" method on Primitive and Non-primitive
+        String[] s1 = {"jay", "Maurya", "Kash"};
+        int[] nums = {1,2,3,4,5};
+        System.out.println(s1.toString());
+        System.out.println(nums.toString());
+
+
+
+
+
+
 
 
 
